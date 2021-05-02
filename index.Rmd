@@ -1,6 +1,6 @@
 ---
 title: "About"
-author: "Sophie Bass"
+author: ""
 date: "5/1/2021"
 output: html_document
 ---
