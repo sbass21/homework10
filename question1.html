@@ -332,8 +332,9 @@ network2 &lt;- network %&gt;%
 network2$In_Tie &lt;- gsub(&quot;Q3_&quot;, &quot;&quot;, network2$In_Tie)
 
 network2 &lt;- network2 %&gt;% 
-  na.omit() %&gt;% select(Out_tie, In_Tie, relationships, extroversion)</code></pre>
-<pre class="r"><code>## Seplitting cells containing comma-separated tie type via for loop
+  na.omit() %&gt;% select(Out_tie, In_Tie, relationships, extroversion)
+
+## Seplitting cells containing comma-separated tie type via for loop
 edge_list &lt;- network2
 
 cols &lt;- &quot;relationships&quot;

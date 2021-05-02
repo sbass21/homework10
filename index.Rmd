@@ -11,7 +11,11 @@ $$\\[.01in]$$
 #### This is a website created for BDS 516 Homework #10. 
 
 
-## *Set-up*
+$$\\[.01in]$$
+
+
+
+#### ***Set-up***
 ```{r, message=FALSE, warning=FALSE}
 #Packages and data
 library(tidyverse)

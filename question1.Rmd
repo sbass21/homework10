@@ -53,9 +53,7 @@ network2$In_Tie <- gsub("Q3_", "", network2$In_Tie)
 
 network2 <- network2 %>% 
   na.omit() %>% select(Out_tie, In_Tie, relationships, extroversion)
-```
 
-```{r, comment=NA}
 ## Seplitting cells containing comma-separated tie type via for loop
 edge_list <- network2
 
