@@ -15,3 +15,90 @@ $$\\[.01in]$$
 
 # *Prepare the data for the network analysis (create a separate edge and node list)*
 
+
+$$\\[.01in]$$
+
+```{r, include=FALSE}
+#Packages and data
+library(tidyverse)
+library(lubridate)
+library(dplyr)
+library(ggplot2)
+library(sna)
+library(readxl)
+library(network)
+library(splitstackshape)
+setwd("~/Documents/*MBDS/BDS 516/Data")
+hw10 <- read_excel("hw10.xlsx")
+```
+
+
+### **Edge List**
+```{r, comment=NA}
+### Creating Edge List
+network <- hw10
+network <- network[-1,] 
+
+# Renaming columns
+colnames(network)[1] <- "Out_tie" 
+colnames(network)[42] <- "extroversion" 
+
+## Pivot_longer so that out_ties are contained in cells (and not displayed as variables)
+network2 <- network %>% 
+  pivot_longer(cols = starts_with("Q3"),
+               names_to = "In_Tie",
+               values_to = "relationships")
+
+network2$In_Tie <- gsub("Q3_", "", network2$In_Tie)
+
+network2 <- network2 %>% 
+  na.omit() %>% select(Out_tie, In_Tie, relationships, extroversion)
+```
+
+```{r, comment=NA}
+## Seplitting cells containing comma-separated tie type via for loop
+edge_list <- network2
+
+cols <- "relationships"
+
+for (i in cols) {
+  edge_list <- cSplit(edge_list, i, ",", "long")
+  }
+  
+colnames(edge_list)[3] <- "Tie_Type" 
+
+# Selecting columns that pertain to the network 
+edge_list <- edge_list %>% select(-extroversion)
+
+head(edge_list, n = 20)
+```
+
+
+$$\\[.01in]$$
+
+
+
+### **Node List**
+
+```{r, comment=NA}
+### Creating Node List
+node_list <- network %>% 
+  select(Out_tie, extroversion) %>% 
+  na.omit()
+
+colnames(node_list)[1] <- "id" 
+
+head(node_list, n = 20)
+```
+
+
+
+
+
+
+
+
+
+
+
+
