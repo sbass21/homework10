@@ -3,8 +3,6 @@ output_dir: "."
 navbar:
   title: "Sophie Bass"
   left:
-    - text: "About"
-      href: index.html
     - text: "Question #1"
       href: question1.html
     - text: "Question #2"
