@@ -1,3 +1,18 @@
----
-title: test site
----
+name: "Sophie Bass's Website for Homework #10"
+output_dir: "."
+navbar:
+  title: "Homework #10"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Question #1"
+      href: question1.html
+    - text: "Question #2"
+      href: question2.html
+    - text: "Question #3"
+      href: question3.html
+
+output:
+  html_document:
+    theme: simplex
+    highlight: textmate
