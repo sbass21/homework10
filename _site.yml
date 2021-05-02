@@ -1,9 +1,9 @@
 name: "Sophie Bass's Website for Homework #10"
 output_dir: "."
 navbar:
-  title: "Homework #10"
+  title: "Sophie Bass"
   left:
-    - text: "Home"
+    - text: "About"
       href: index.html
     - text: "Question #1"
       href: question1.html
