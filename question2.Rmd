@@ -63,7 +63,7 @@ node_clean[is.na(node_clean)] <- -1
 
 ```{r, message=FALSE, warning=FALSE}
 edge1 <- edge_list %>% filter(Tie_Type == 1)
-net1 <- graph_from_data_frame(d = edge1, vertices = node_list, directed = TRUE)
+net1 <- graph_from_data_frame(d = edge1, vertices = node_clean, directed = TRUE)
 
 deg1 <- degree(net1, mode="all") ## Degree
 avg_deg1 <- mean(deg1)
@@ -86,7 +86,7 @@ sim1 <- assortativity(net1_clean, V(net1_clean)$introversion, directed=T)
 
 ```{r, message=FALSE, warning=FALSE}
 edge2 <- edge_list %>% filter(Tie_Type == 2)
-net2 <- graph_from_data_frame(d = edge2, vertices = node_list, directed = TRUE)
+net2 <- graph_from_data_frame(d = edge2, vertices = node_clean, directed = TRUE)
 
 deg2 <- degree(net2, mode="all") ## Degree
 avg_deg2 <- mean(deg2)
@@ -109,7 +109,7 @@ sim2 <- assortativity(net2_clean, V(net2_clean)$introversion, directed=T)
 
 ```{r, message=FALSE, warning=FALSE}
 edge3 <- edge_list %>% filter(Tie_Type == 3)
-net3 <- graph_from_data_frame(d = edge3, vertices = node_list, directed = TRUE)
+net3 <- graph_from_data_frame(d = edge3, vertices = node_clean, directed = TRUE)
 
 deg3 <- degree(net3, mode="all") ## Degree
 avg_deg3 <- mean(deg3)
@@ -131,7 +131,7 @@ sim3 <- assortativity(net3_clean, V(net3_clean)$introversion, directed=T)
 
 ```{r, message=FALSE, warning=FALSE}
 edge4 <- edge_list %>% filter(Tie_Type == 4)
-net4 <- graph_from_data_frame(d = edge4, vertices = node_list, directed = TRUE)
+net4 <- graph_from_data_frame(d = edge4, vertices = node_clean, directed = TRUE)
 
 deg4 <- degree(net4, mode="all") ## Degree
 avg_deg4 <- mean(deg4)
@@ -156,7 +156,7 @@ sim4 <- assortativity(net4_clean, V(net4_clean)$introversion, directed=T)
 
 ```{r, message=FALSE, warning=FALSE}
 edge5 <- edge_list %>% filter(Tie_Type == 5)
-net5 <- graph_from_data_frame(d = edge5, vertices = node_list, directed = TRUE)
+net5 <- graph_from_data_frame(d = edge5, vertices = node_clean, directed = TRUE)
 
 deg5 <- degree(net5, mode="all") ## Degree
 avg_deg5 <- mean(deg5)
@@ -214,7 +214,7 @@ colnames(similarity_table)[1] <- "Tie Type"
 similarity_table %>% kbl() %>% kable_styling()
 ```
 
-
+#### As shown above, **Tie Type 1** (i.e. having texted a person in the last 7 days) generates the *most* similar network in terms of introversion, while **Tie Type 3** (i.e. friendship) generates the *least* similar networks in terms of introversion.
 
 
 
