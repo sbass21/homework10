@@ -60,7 +60,7 @@ legend("bottomright", c("Introvert","Extrovert", "Ambivert", "NA"), pt.bg=c("lig
        pch=21, col="#777777", pt.cex=1.75, cex=.8, adj = c(0, 0.6))
 ```
 
-
+##### **Looking at the visual of the social network above, one can see that there are three data points representing introverts and three data points representing extroverts. Neither extroverts nor introverts are decidely located at the periphery of the network. However, in *comparison to one another*, it does seem that extroverts are more at the center, while introverts are closer to the periphery.**
 
 
 
